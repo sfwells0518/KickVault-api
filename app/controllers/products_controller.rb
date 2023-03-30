@@ -38,4 +38,11 @@ class ProductsController < ApplicationController
     render :show
     # initial test code: render json: {message: "hello"}
   end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+
+    @product.save
+    render :show
+  end
 end
