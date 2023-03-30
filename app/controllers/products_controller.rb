@@ -28,9 +28,14 @@ class ProductsController < ApplicationController
   end
 
   def update
-    render :json {message: "hello"}
-
+    @product = Product.find_by(id: params[:id])
+    @product.name = ""
+    @product.price =
+      @product.image_url = ""
+    @product.description = ""
+    # save updated product
+    @recipe.save
+    render :show
+    # initial test code: render json: {message: "hello"}
   end
-
-
 end
