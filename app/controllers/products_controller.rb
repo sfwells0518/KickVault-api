@@ -41,8 +41,8 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find_by(id: params[:id])
-
-    @product.save
-    render :show
+    # delete/destroy product
+    @product.destroy
+    render json: { message: "Product has been successfully removed" }
   end
 end
