@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
     @product.image_url = params[:image_url]
     @product.description = params[:description]
     # save updated product
-    @recipe.save
+    @product.save
     render :show
     # initial test code: render json: {message: "hello"}
   end
