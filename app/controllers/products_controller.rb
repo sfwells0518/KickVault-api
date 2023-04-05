@@ -30,8 +30,12 @@ class ProductsController < ApplicationController
     @product.image_url = params[:image_url] || @product.image_url
     @product.description = params[:description] || @product.description
     # save updated product
-    @product.save
-    render :show
+
+    if @product.save
+      render :show
+    else
+      render json: { errors: @product.errors.full_messages }
+    end
     # initial test code: render json: {message: "hello"}
   end
 
