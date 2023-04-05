@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Product.create!([
+  { name: "iPad Pro", price: "400.0", image_url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-finish-select-202212-11inch-space-gray-wifi_FMT_WHH?wid=1280&hei=720&fmt=p-jpg&qlt=95&.v=1670865949101", description: "11 inch iPad Pro Wi-Fi 256GB" },
+  { name: "Macbook Pro", price: "1000.0", image_url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-spacegray-select-202206?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1664497359481", description: "13 inch Macbook Pro 256GB" },
+  { name: "Apple Pencil", price: "75.0", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScglgtPfXO1pSHCjKHH5dKtBW0CzokHxbnG2Hz7Ms-DA&usqp=CAU&ec=48600112", description: "Apple Pencil expands the power of iPad and opens up new creative possibilities." },
+  { name: "Apple Pencil", price: "75.0", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd\n      9GcScglgtPfXO1pSHCjKHH5dKtBW0CzokHxbnG2Hz7Ms-DA&usqp=CAUec=48600112", description: "Apple Pencil expands the power of iPad and opens up new creative possibilities." },
+  { name: "Apple Pencil", price: "75.0", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd\n      9GcScglgtPfXO1pSHCjKHH5dKtBW0CzokHxbnG2Hz7Ms-DA&usqp=CAUec=48600112", description: "Apple Pencil expands the power of iPad and opens up new creative possibilities." },
+  { name: "Airpods Pro", price: "400.0", image_url: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71zny7BTRlL._AC_UF1000,1000_QL80_.jpg", description: "Active noise cancellation for immersive sound." },
+  { name: "Apple Airtag", price: "29.0", image_url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104_FMT_WHH?wid=2000&hei=2000&fmt=jpeg&qlt=90&.v=1617761672000", description: "Keep track of your keys, wallet, luggage, backpack, and more, all in the Find My app" },
+  { name: "iPhone 14 Pro Max", price: "1100.0", image_url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-model-unselect-gallery-1-202209?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1660753619946", description: "Largest iPhone 14 model" },
+  { name: "Apple TV 4k WiFi ", price: "150.0", image_url: "https://i.pcmag.com/imagery/reviews/07xZU953MzQR4JrEn7iYque-5..v1597167714.jpg", description: "Apple TV is a set-top box that allows a television to become a display screen for Internet content. " },
+  { name: "iMac (M2, 2023)", price: "1699.0", image_url: "https://images.techadvisor.com/cmsdata/features/3807000/apple_imac_m1_24inch_001_thumb.jpg", description: "Apple introduced the redesigned iMac with a new colorful design " },
+])
