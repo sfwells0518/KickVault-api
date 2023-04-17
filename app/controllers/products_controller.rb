@@ -1,7 +1,12 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    render :index
+    # render :index
+    if current_user
+      render :index
+    else
+      render json: { message: "You are not logged in!" }, status: :unauthorized
+    end
   end
 
   def show
