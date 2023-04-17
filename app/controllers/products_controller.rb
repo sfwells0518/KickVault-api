@@ -14,8 +14,14 @@ class ProductsController < ApplicationController
       name: params[:name],
       price: params[:price],
       description: params[:description],
+      supplier_id: params[:supplier_id],
     )
     if @product.save
+      @image = Image.new(
+        url: params[:image_url],
+        product_id: @product_id,
+      )
+      @image.save
       render :show
     else
       render json: { errors: @product.errors.full_messages }
@@ -27,6 +33,7 @@ class ProductsController < ApplicationController
     @product.name = params[:name] || @product.name
     @product.price = params[:price] || @product.price
     @product.description = params[:description] || @product.description
+    @product.supplier_id = params[:supplier_id] || @product.supplier_id
     # save updated product
 
     if @product.save
