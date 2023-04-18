@@ -58,4 +58,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_190652) do
     t.datetime "updated_at", null: false
     t.boolean "admin"
   end
+
 end

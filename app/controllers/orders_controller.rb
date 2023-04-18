@@ -1,24 +1,17 @@
 class OrdersController < ApplicationController
-  before_action: authenticate_user
-  
+  before_action :authenticate_user
+
   def index
-    @orders = Order.all
-    # render :index
-    if current_user
-      render :index
-    else
-      render json: { message: "You are not logged in!" }, status: :unauthorized
-    end
+    @orders = current_user.orders
+    render :index
   end
 
   def show
-    @order = Order.find_by(id: params[:id], )
+    @order = Order.find_by(id: params[:id], user_id: current_user.id)
     render :show
   end
 
   def create
-    # add subtotal, tax and total calculations
-
     product = Product.find_by(id: params[:product_id])
     calculated_subtotal = params[:quantity].to_i * product.price
 
@@ -36,11 +29,7 @@ class OrdersController < ApplicationController
       tax: calculated_tax,
       total: calculated_total,
     )
-
-    if @order.save
-      render json: { message: "Order created successfully!" }
-    else
-      render json: { errors: @order.errors.full_messages }
-    end
+    @order.save
+    render :show
   end
 end
