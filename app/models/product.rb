@@ -1,12 +1,19 @@
 class Product < ApplicationRecord
+  # Associations
+
+  belongs_to :supplier
+  belongs_to :user
+  has_many :images
+  has_many :orders
+
+  # Validations
+
   # validates :name, presence: true
   # validates :price, presence: true
   # validates :description, presence: true
   # validates :description, length: { minimum: 10 }
 
-  belongs_to :supplier
-  has_many :images
-  has_many :orders
+  # Additional Code:
 
   def supplier
     Supplier.find_by(id: supplier_id)
