@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
       price: params[:price],
       description: params[:description],
       supplier_id: params[:supplier_id],
+      user_id: current_user.id,
     )
     if @product.save
       @image = Image.new(
