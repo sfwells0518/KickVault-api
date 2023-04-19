@@ -6,6 +6,7 @@ class Product < ApplicationRecord
   has_many :images
   has_many :orders
   has_many :category_products
+  has_many :cateogries, through: :category_products
 
   # Validations
 
@@ -15,14 +16,6 @@ class Product < ApplicationRecord
   # validates :description, length: { minimum: 10 }
 
   # Additional Code:
-
-  def categories
-    categories = []
-    category_products.each do |cp|
-      categories << cp.category
-    end
-    categories
-  end
 
   def supplier
     Supplier.find_by(id: supplier_id)
