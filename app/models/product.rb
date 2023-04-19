@@ -16,6 +16,14 @@ class Product < ApplicationRecord
 
   # Additional Code:
 
+  def categories
+    categories = []
+    category_products.each do |cp|
+      categories << cp.category
+    end
+    categories
+  end
+
   def supplier
     Supplier.find_by(id: supplier_id)
   end
