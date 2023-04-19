@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :images
   has_many :orders
+  has_many :category_products
 
   # Validations
 
