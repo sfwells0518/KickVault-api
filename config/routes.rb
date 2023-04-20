@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   post "/orders" => "orders#create" # logged in users
   get "/orders/:id" => "orders#show" # logged in users
   get "/orders" => "orders#index" # logged in users
+
+  # Carted_Products Routes:
+  post "/carted_products" => "carted_products#create"
+  get "/carted_products" => "carted_products#index"
+  delete "/carted_products/:id" => "carted_products#destroy"
 end
 
 # people not logged in (everybody)
