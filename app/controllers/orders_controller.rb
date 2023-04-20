@@ -20,8 +20,6 @@ class OrdersController < ApplicationController
 
     @order = Order.new(
       user_id: current_user.id,
-      product_id: params[:product_id],
-      quantity: params[:quantity],
       subtotal: params[:subtotal],
       tax: params[:tax],
       total: params[:total],
