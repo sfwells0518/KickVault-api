@@ -19,14 +19,12 @@ class OrdersController < ApplicationController
       calculated_subtotal += carted_product.product.price * carted_product.quantity
     end
 
-    calculated_tax = calculated_subtotal * 0.09
+    tax_rate = 0.09
+    calculated_tax = calculated_subtotal * tax_rate
     calculated_total = calculated_subtotal + calculated_tax
 
     @order = Order.new(
       user_id: current_user.id,
-      # subtotal: params[:subtotal],
-      # tax: params[:tax],
-      # total: params[:total],
       subtotal: calculated_subtotal,
       tax: calculated_tax,
       total: calculated_total,
